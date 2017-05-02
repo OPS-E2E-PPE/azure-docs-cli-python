@@ -76,16 +76,16 @@ children:
     description: ''
   - name: --resource-group -g
     isRequired: True
-    summary: Name of resource group. You can configure the default group using 'az configure --defaults group=<name>'.
+    summary: Name of resource group. You can configure the default group using az configure --defaults group=<name>.
     description: ''
   - name: --routing-method
     isRequired: True
     summary: Routing method.
     description: ''
-    parameterValueGroup: Performance, Priority, Weighted
+    parameterValueGroup: Geographic, Performance, Priority, Weighted
   - name: --unique-dns-name
     isRequired: True
-    summary: Relative DNS name for the traffic manager profile. Resulting FQDN will be '<unique-dns-name>.trafficmanager.net' and must be globally unique.
+    summary: Relative DNS name for the traffic manager profile. Resulting FQDN will be <unique-dns-name>.trafficmanager.net and must be globally unique.
     description: ''
   - name: --monitor-path
     isRequired: False
@@ -160,7 +160,7 @@ children:
     description: ''
   - name: --resource-group -g
     isRequired: True
-    summary: Name of resource group. You can configure the default group using 'az configure --defaults group=<name>'.
+    summary: Name of resource group. You can configure the default group using az configure --defaults group=<name>.
     description: ''
   - name: --debug
     isRequired: False
@@ -201,7 +201,7 @@ children:
   parameters:
   - name: --resource-group -g
     isRequired: False
-    summary: Name of resource group. You can configure the default group using 'az configure --defaults group=<name>'.
+    summary: Name of resource group. You can configure the default group using az configure --defaults group=<name>.
     description: ''
   - name: --debug
     isRequired: False
@@ -246,7 +246,7 @@ children:
     description: ''
   - name: --resource-group -g
     isRequired: True
-    summary: Name of resource group. You can configure the default group using 'az configure --defaults group=<name>'.
+    summary: Name of resource group. You can configure the default group using az configure --defaults group=<name>.
     description: ''
   - name: --debug
     isRequired: False
@@ -291,7 +291,7 @@ children:
     description: ''
   - name: --resource-group -g
     isRequired: True
-    summary: Name of resource group. You can configure the default group using 'az configure --defaults group=<name>'.
+    summary: Name of resource group. You can configure the default group using az configure --defaults group=<name>.
     description: ''
   - name: --monitor-path
     isRequired: False
@@ -309,7 +309,7 @@ children:
     isRequired: False
     summary: Routing method.
     description: ''
-    parameterValueGroup: Performance, Priority, Weighted
+    parameterValueGroup: Geographic, Performance, Priority, Weighted
   - name: --status
     isRequired: False
     summary: Status of the Traffic Manager profile.
@@ -376,6 +376,6 @@ Metadata:
   doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
   doc_source_url_path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
   original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
-  gitcommit: https://github.com/Azure/azure-cli/blob/bd467e7eaf932a19ec3f68e60bdb4ba83c0a57b4/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
-  updated_at: 4/6/2017 4:05:51 PM
-  ms.date: 4/6/2017
+  gitcommit: https://github.com/Azure/azure-cli/blob/9cdebf135a9cb492d29636f54a164bb206e3c2a5/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
+  updated_at: 5/1/2017 6:38:07 PM
+  ms.date: 5/1/2017
