@@ -41,38 +41,53 @@ For information about the latest release, see the [release notes](release-notes-
 3. Run Azure CLI 2.0 from the command prompt with the `az` command.
 
 > [!Note]
+> When you install with InstallAzureCli, `az component update` isn't supported.
+> To update to the latest CLI, run `curl -L https://aka.ms/InstallAzureCli | bash` again.
+> 
 > To uninstall, see the [manual uninstall instructions](#uninstall).
 
 ## Windows
 
-### Bash on Windows
+Azure CLI 2.0 supports Bash command syntax, making Bash on Ubuntu on Windows a great way to use the CLI.
+If you don't use Bash, you can install and use the CLI in the Windows command-line.
 
-Azure CLI 2.0 supports Bash command syntax, making Bash on Windows a great way to use the CLI.
+### Bash on Ubuntu on Windows
 
-1. If you don't have Bash on Windows, [install it](https://docs.microsoft.com/cli/azure/install-azure-cli).
+1. If you don't have Bash on Windows, [install it](https://msdn.microsoft.com/commandline/wsl/install_guide).
 
 2. Open the Bash shell.
 
-2. Install Azure CLI 2.0 with one `curl` command.
+3. If you don't have Python, install it.
 
    ```bash
-   curl -L https://aka.ms/InstallAzureCli | bash
+   sudo apt-get install python3
    ```
 
-3. You may have to restart your command shell for some changes to take effect.
+   > [!NOTE]
+   > To see if you have python installed, run `python --version`.
+
+4. Modify your sources list.
 
    ```bash
-   exec -l $SHELL
+   echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ wheezy main" | \
+        sudo tee /etc/apt/sources.list.d/azure-cli.list
    ```
 
-4. Run Azure CLI 2.0 from the command prompt with the `az` command.
+5. Run the following sudo commands:
 
-> [!Note]
-> To uninstall, see the [manual uninstall instructions](#uninstall).
+   ```bash
+   sudo apt-key adv --keyserver packages.microsoft.com --recv-keys 417A0893
+   sudo apt-get install apt-transport-https
+   sudo apt-get update && sudo apt-get install azure-cli
+   ```
+
+> [!NOTE]
+> When you install with apt-get, `az component` isn't supported.
+> To update the CLI, run `sudo apt-get update && sudo apt-get install azure-cli` again.
+> 
+> To uninstall, run `sudo apt-get remove azure-cli`.
 
 ### Windows command-line 
-
-You can use Azure CLI 2.0 in the Windows command line using `pip`. 
 
 1. Visit the Python site and [download Python](https://www.python.org/downloads/) for Windows.
    Be sure to install the Pip component when you install Python.
@@ -96,7 +111,16 @@ You can use Azure CLI 2.0 in the Windows command line using `pip`.
    where `XY` is your Python version (for example, `%USERPROFILE%\AppData\Roaming\Python\Python27\Scripts`).
    Add the folder that contains `az.bat` to your path.
    
-4. Run Azure CLI 2.0 from the command prompt with the 'az' command.
+4. Run Azure CLI 2.0 from the command prompt with the `az` command.
+
+> [!NOTE]
+> If you already have Azure CLI 2.0 installed and you want to see whether you have the latest version,
+> use `az --version` to see what version you have.
+> Compare that to the latest version available at [https://pypi.python.org/pypi/azure-cli](https://pypi.python.org/pypi/azure-cli).
+> 
+> To update to the latest CLI, run `az component update`.
+> 
+> To uninstall the CLI, run `pip uninstall azure-cli`.
 
 ## Linux
 
@@ -117,6 +141,9 @@ You can use Azure CLI 2.0 in the Windows command line using `pip`.
 4. Run Azure CLI 2.0 from the command prompt with the `az` command.
 
 > [!Note]
+> When you install with InstallAzureCli, `az component update` isn't supported.
+> To update to the latest CLI, run `curl -L https://aka.ms/InstallAzureCli | bash` again.
+> 
 > To uninstall, see the [manual uninstall instructions](#uninstall).
 
 ## Docker
@@ -139,8 +166,9 @@ See our [Docker tags](https://hub.docker.com/r/azuresdk/azure-cli-python/tags/) 
 > docker run -v ${HOME}:/root azuresdk/azure-cli-python:<version>
 > ```
 
-The Docker image does not support the [`component` feature](/cli/azure/component).
-To update the Azure CLI 2.0, use `docker run` to install the latest image, or the specific image that you want.
+> [!NOTE]
+> The Docker image does not support the [`component` feature](/cli/azure/component).
+> To update the Azure CLI 2.0, use `docker run` to install the latest image, or the specific image that you want.
 
 ## apt-get
 
@@ -170,12 +198,11 @@ For Debian/Ubuntu based systems, you can install Azure CLI 2.0 via `apt-get`.
    sudo apt-get update && sudo apt-get install azure-cli
    ```
 
-When you install with apt-get, `az component` isn't supported.
-To update the CLI, use the following commands:
-
-```bash
-sudo apt-get update && sudo apt-get install azure-cli
-```
+> [!NOTE]
+> When you install with apt-get, `az component` isn't supported.
+> To update the CLI, run `sudo apt-get update && sudo apt-get install azure-cli` again.
+> 
+> To uninstall, run `sudo apt-get remove azure-cli`.
 
 ## Linux Prerequisites
 
