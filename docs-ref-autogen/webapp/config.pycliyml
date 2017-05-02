@@ -204,7 +204,7 @@ children:
   uid: az_webapp_config_set
   name: az webapp config set
   description: ''
-  summary: Create or update web app configurations.
+  summary: Create or update web app configurations. [!code-azurecli-interactive[](test.ps)]
   Metadata: {}
 - commandList: []
   htmlId: show
@@ -212,7 +212,7 @@ children:
   parameters:
   - name: --name -n
     isRequired: True
-    summary: Name of the web. You can configure the default using 'az configure --defaults web=<name>'. [!code-azurecli-interactive[](test.ps)]
+    summary: Name of the web. You can configure the default using 'az configure --defaults web=<name>'.
     description: ''
   - name: --resource-group -g
     isRequired: True
