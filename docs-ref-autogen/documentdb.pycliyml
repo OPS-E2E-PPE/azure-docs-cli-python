@@ -2,9 +2,50 @@ commandList:
 - name: az documentdb check-name-exists
   description: Checks that the Azure DocumentDB account name already exists.
   href: documentdb#check-name-exists
+- name: az documentdb collection
+  description: Manage Azure DocumentDB collections.
+  href: documentdb/collection
+  isGroup: true
+- name: az documentdb collection create
+  description: Creates an Azure DocumentDB collection.
+  href: documentdb/collection#create
+- name: az documentdb collection delete
+  description: Deletes an Azure DocumentDB collection.
+  href: documentdb/collection#delete
+- name: az documentdb collection exists
+  description: Returns a boolean indicating whether the collection exists.
+  href: documentdb/collection#exists
+- name: az documentdb collection list
+  description: Lists all Azure DocumentDB collections.
+  href: documentdb/collection#list
+- name: az documentdb collection show
+  description: Shows an Azure DocumentDB collection and its offer.
+  href: documentdb/collection#show
+- name: az documentdb collection update
+  description: Updates an Azure DocumentDB collection.
+  href: documentdb/collection#update
 - name: az documentdb create
   description: Create a new Azure DocumentDB database account.
   href: documentdb#create
+- name: az documentdb database
+  description: Manage Azure DocumentDB databases.
+  href: documentdb/database
+  isGroup: true
+- name: az documentdb database create
+  description: Creates an Azure DocumentDB database.
+  href: documentdb/database#create
+- name: az documentdb database delete
+  description: Deletes an Azure DocumentDB database.
+  href: documentdb/database#delete
+- name: az documentdb database exists
+  description: Returns a boolean indicating whether the database exists.
+  href: documentdb/database#exists
+- name: az documentdb database list
+  description: Lists all Azure DocumentDB databases.
+  href: documentdb/database#list
+- name: az documentdb database show
+  description: Shows an Azure DocumentDB database.
+  href: documentdb/database#show
 - name: az documentdb delete
   description: Deletes an existing Azure DocumentDB database account.
   href: documentdb#delete
@@ -39,12 +80,8 @@ children:
   htmlId: check-name-exists
   examples: []
   parameters:
-  - name: --ids
-    isRequired: False
-    summary: One or more resource IDs (space delimited). If provided, no other 'Resource Id' arguments should be specified.
-    description: ''
   - name: --name -n
-    isRequired: False
+    isRequired: True
     summary: Name of the DocumentDB database account.
     description: ''
   - name: --debug
@@ -148,17 +185,13 @@ children:
   htmlId: delete
   examples: []
   parameters:
-  - name: --ids
-    isRequired: False
-    summary: One or more resource IDs (space delimited). If provided, no other 'Resource Id' arguments should be specified.
-    description: ''
   - name: --name -n
-    isRequired: False
+    isRequired: True
     summary: Name of the DocumentDB database account.
     description: ''
   - name: --resource-group -g
-    isRequired: False
-    summary: Name of resource group. You can configure the default group using 'az configure --defaults group=<name>'.
+    isRequired: True
+    summary: Name of resource group. You can configure the default group using az configure --defaults group=<name>.
     description: ''
   - name: --debug
     isRequired: False
@@ -192,21 +225,17 @@ children:
   htmlId: failover-priority-change
   examples: []
   parameters:
-  - name: --failover-policies
-    isRequired: False
-    summary: Space separated failover policies in 'regionName=failoverPriority' format. E.g "East US"=0 "West US"=1.
-    description: ''
-  - name: --ids
-    isRequired: False
-    summary: One or more resource IDs (space delimited). If provided, no other 'Resource Id' arguments should be specified.
-    description: ''
   - name: --name -n
-    isRequired: False
+    isRequired: True
     summary: Name of the DocumentDB database account.
     description: ''
   - name: --resource-group -g
+    isRequired: True
+    summary: Name of resource group. You can configure the default group using az configure --defaults group=<name>.
+    description: ''
+  - name: --failover-policies
     isRequired: False
-    summary: Name of resource group. You can configure the default group using 'az configure --defaults group=<name>'.
+    summary: Space separated failover policies in 'regionName=failoverPriority' format. E.g "East US"=0 "West US"=1.
     description: ''
   - name: --debug
     isRequired: False
@@ -242,7 +271,7 @@ children:
   parameters:
   - name: --resource-group -g
     isRequired: False
-    summary: Name of resource group. You can configure the default group using 'az configure --defaults group=<name>'.
+    summary: Name of resource group. You can configure the default group using az configure --defaults group=<name>.
     description: ''
   - name: --debug
     isRequired: False
@@ -276,17 +305,13 @@ children:
   htmlId: list-connection-strings
   examples: []
   parameters:
-  - name: --ids
-    isRequired: False
-    summary: One or more resource IDs (space delimited). If provided, no other 'Resource Id' arguments should be specified.
-    description: ''
   - name: --name -n
-    isRequired: False
+    isRequired: True
     summary: Name of the DocumentDB database account.
     description: ''
   - name: --resource-group -g
-    isRequired: False
-    summary: Name of resource group. You can configure the default group using 'az configure --defaults group=<name>'.
+    isRequired: True
+    summary: Name of resource group. You can configure the default group using az configure --defaults group=<name>.
     description: ''
   - name: --debug
     isRequired: False
@@ -320,17 +345,13 @@ children:
   htmlId: list-keys
   examples: []
   parameters:
-  - name: --ids
-    isRequired: False
-    summary: One or more resource IDs (space delimited). If provided, no other 'Resource Id' arguments should be specified.
-    description: ''
   - name: --name -n
-    isRequired: False
+    isRequired: True
     summary: Name of the DocumentDB database account.
     description: ''
   - name: --resource-group -g
-    isRequired: False
-    summary: Name of resource group. You can configure the default group using 'az configure --defaults group=<name>'.
+    isRequired: True
+    summary: Name of resource group. You can configure the default group using az configure --defaults group=<name>.
     description: ''
   - name: --debug
     isRequired: False
@@ -364,17 +385,13 @@ children:
   htmlId: list-read-only-keys
   examples: []
   parameters:
-  - name: --ids
-    isRequired: False
-    summary: One or more resource IDs (space delimited). If provided, no other 'Resource Id' arguments should be specified.
-    description: ''
   - name: --name -n
-    isRequired: False
+    isRequired: True
     summary: Name of the DocumentDB database account.
     description: ''
   - name: --resource-group -g
-    isRequired: False
-    summary: Name of resource group. You can configure the default group using 'az configure --defaults group=<name>'.
+    isRequired: True
+    summary: Name of resource group. You can configure the default group using az configure --defaults group=<name>.
     description: ''
   - name: --debug
     isRequired: False
@@ -413,17 +430,13 @@ children:
     summary: The access key to regenerate.
     description: ''
     parameterValueGroup: primary, primaryReadonly, secondary, secondaryReadonly
-  - name: --ids
-    isRequired: False
-    summary: One or more resource IDs (space delimited). If provided, no other 'Resource Id' arguments should be specified.
-    description: ''
   - name: --name -n
-    isRequired: False
+    isRequired: True
     summary: Name of the DocumentDB database account.
     description: ''
   - name: --resource-group -g
-    isRequired: False
-    summary: Name of resource group. You can configure the default group using 'az configure --defaults group=<name>'.
+    isRequired: True
+    summary: Name of resource group. You can configure the default group using az configure --defaults group=<name>.
     description: ''
   - name: --debug
     isRequired: False
@@ -457,17 +470,13 @@ children:
   htmlId: show
   examples: []
   parameters:
-  - name: --ids
-    isRequired: False
-    summary: One or more resource IDs (space delimited). If provided, no other 'Resource Id' arguments should be specified.
-    description: ''
   - name: --name -n
-    isRequired: False
+    isRequired: True
     summary: Name of the DocumentDB database account.
     description: ''
   - name: --resource-group -g
-    isRequired: False
-    summary: Name of resource group. You can configure the default group using 'az configure --defaults group=<name>'.
+    isRequired: True
+    summary: Name of resource group. You can configure the default group using az configure --defaults group=<name>.
     description: ''
   - name: --debug
     isRequired: False
@@ -501,6 +510,14 @@ children:
   htmlId: update
   examples: []
   parameters:
+  - name: --name -n
+    isRequired: True
+    summary: Name of the DocumentDB database account.
+    description: ''
+  - name: --resource-group -g
+    isRequired: True
+    summary: Name of the resource group.
+    description: ''
   - name: --default-consistency-level
     isRequired: False
     summary: Default consistency level of the DocumentDB database account.
@@ -521,18 +538,6 @@ children:
   - name: --max-staleness-prefix
     isRequired: False
     summary: When used with Bounded Staleness consistency, this value represents the number of stale requests tolerated. Accepted range for this value is 1 - 2,147,483,647.
-    description: ''
-  - name: --ids
-    isRequired: False
-    summary: One or more resource IDs (space delimited). If provided, no other 'Resource Id' arguments should be specified.
-    description: ''
-  - name: --name -n
-    isRequired: False
-    summary: Name of the DocumentDB database account.
-    description: ''
-  - name: --resource-group -g
-    isRequired: False
-    summary: Name of the resource group.
     description: ''
   - name: --debug
     isRequired: False
@@ -565,5 +570,5 @@ children:
 uid: az_documentdb
 name: 'DocumentDB - az documentdb'
 description: ''
-summary: Manage your Azure DocumentDB (NoSQL) database accounts.
+summary: Manage Azure DocumentDB (NoSQL) database accounts.
 Metadata: {}

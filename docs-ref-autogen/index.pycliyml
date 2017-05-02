@@ -51,7 +51,7 @@ commandList:
   href: dls
   isGroup: true
 - name: az documentdb
-  description: Manage your Azure DocumentDB (NoSQL) database accounts.
+  description: Manage Azure DocumentDB (NoSQL) database accounts.
   href: documentdb
   isGroup: true
 - name: az feature
@@ -122,6 +122,9 @@ commandList:
   description: Use role assignments to manage access to your Azure resources.
   href: role
   isGroup: true
+- name: az shell
+  description: Start the interactive shell for Microsoft Azure CLI (preview).
+  href: '#shell'
 - name: az snapshot
   description: Manage point-in-time copies of managed disks, native blobs, or other snapshots.
   href: snapshot
@@ -149,6 +152,10 @@ commandList:
 - name: az vmss
   description: Create highly available, auto-scalable Linux or Windows virtual machines.
   href: vmss
+  isGroup: true
+- name: az webapp
+  description: Manage web apps.
+  href: webapp
   isGroup: true
 htmlId: az
 examples: []
@@ -290,6 +297,10 @@ children:
   - title: Log in with a service principal using client certificate.
     code: az login --service-principal -u http://azure-cli-2016-08-05-14-31-15 -p ~/mycertfile.pem --tenant contoso.onmicrosoft.com
   parameters:
+  - name: --allow-no-subscriptions
+    isRequired: False
+    summary: Support access tenants without subscriptions. It's uncommon but useful to run tenant level commands, such as 'az ad'.
+    description: ''
   - name: --password -p
     isRequired: False
     summary: Credentials like user password, or for a service principal, provide client secret or a pem file with key and public certificate. Will prompt if not given.
@@ -379,6 +390,43 @@ children:
   name: az logout
   description: ''
   summary: Log out to remove access to Azure subscriptions.
+  Metadata: {}
+- commandList: []
+  htmlId: shell
+  examples: []
+  parameters:
+  - name: --style -s
+    isRequired: False
+    summary: The colors of the shell.
+    description: ''
+    parameterValueGroup: bg, br, contrast, default, grey, halloween, neon, none, pastel, primary, purple, quiet
+  - name: --debug
+    isRequired: False
+    summary: Increase logging verbosity to show all debug logs.
+    description: ''
+  - name: --help -h
+    isRequired: False
+    summary: Show this help message and exit.
+    description: ''
+  - name: --output -o
+    isRequired: False
+    summary: Output format.
+    description: ''
+    defaultValue: json
+    parameterValueGroup: json, jsonc, table, tsv
+  - name: --query
+    isRequired: False
+    summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
+    description: ''
+  - name: --verbose
+    isRequired: False
+    summary: Increase logging verbosity. Use --debug for full debug logs.
+    description: ''
+  children: []
+  uid: az_shell
+  name: az shell
+  description: ''
+  summary: Start the interactive shell for Microsoft Azure CLI (preview).
   Metadata: {}
 uid: az
 name: 'Azure CLI 2.0: Command reference - az'

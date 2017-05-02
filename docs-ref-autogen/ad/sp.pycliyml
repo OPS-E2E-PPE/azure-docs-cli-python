@@ -89,10 +89,12 @@ children:
     code: az role assignment create --assignee <name> --role Contributor
   - title: Revoke the service principal when done with it.
     code: az ad app delete --id <name>
+  - title: Create using certificate from Key Vault
+    code: "az keyvault certificate download --vault-name vault -n cert-name -f cert.pem \n                        az ad sp create-for-rbac --cert @cert.pem"
   parameters:
   - name: --cert
     isRequired: False
-    summary: PEM formatted public certificate. Do not include private key info.
+    summary: PEM or DER formatted public certificate using string or @<file path> to load from a file. Do not include private key info.
     description: ''
   - name: --create-cert
     isRequired: False
@@ -106,7 +108,7 @@ children:
     isRequired: False
     summary: A display name or an app id uri. Command will generate one if missing.
     description: ''
-  - name: --password
+  - name: --password -p
     isRequired: False
     summary: The password used to login. If missing, command will generate one.
     description: ''
@@ -125,9 +127,8 @@ children:
     description: ''
   - name: --years
     isRequired: False
-    summary: Years the password will be valid.
+    summary: 'Years the password will be valid. Default: 1 year.'
     description: ''
-    defaultValue: 1
   - name: --debug
     isRequired: False
     summary: Increase logging verbosity to show all debug logs.
@@ -273,9 +274,8 @@ children:
     description: ''
   - name: --years
     isRequired: False
-    summary: Years the password will be valid.
+    summary: 'Years the password will be valid. Default: 1 year.'
     description: ''
-    defaultValue: 1
   - name: --debug
     isRequired: False
     summary: Increase logging verbosity to show all debug logs.
@@ -358,6 +358,6 @@ Metadata:
   doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
   doc_source_url_path: src/command_modules/azure-cli-role/azure/cli/command_modules/role/_help.py
   original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-role/azure/cli/command_modules/role/_help.py
-  gitcommit: https://github.com/Azure/azure-cli/blob/c719f2a79e36c91e249db19c30c06e534dc6ac23/src/command_modules/azure-cli-role/azure/cli/command_modules/role/_help.py
-  updated_at: 3/23/2017 6:37:38 PM
-  ms.date: 3/23/2017
+  gitcommit: https://github.com/Azure/azure-cli/blob/0184a166e86690065d6325489ca0490be5f92f4b/src/command_modules/azure-cli-role/azure/cli/command_modules/role/_help.py
+  updated_at: 4/27/2017 6:25:02 PM
+  ms.date: 4/27/2017
