@@ -208,7 +208,7 @@ children:
   Metadata: {}
 - commandList: []
   htmlId: show
-  examples: []
+  examples: [ test.ps ]
   parameters:
   - name: --name -n
     isRequired: True
