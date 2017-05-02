@@ -212,7 +212,7 @@ children:
   parameters:
   - name: --name -n
     isRequired: True
-    summary: Name of the web. You can configure the default using 'az configure --defaults web=<name>'.
+    summary: Name of the web. You can configure the default using 'az configure --defaults web=<name>'. [!code-azurecli-interactive[](test.ps)]
     description: ''
   - name: --resource-group -g
     isRequired: True
