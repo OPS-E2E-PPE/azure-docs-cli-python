@@ -339,6 +339,10 @@ children:
     isRequired: False
     summary: Space separated list of IP address prefixes for the VNet.
     description: ''
+  - name: --dns-servers
+    isRequired: False
+    summary: Space separated list of DNS server IP addresses.
+    description: ''
   - name: --add
     isRequired: False
     summary: 'Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>.'
@@ -392,6 +396,6 @@ Metadata:
   doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
   doc_source_url_path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
   original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
-  gitcommit: https://github.com/Azure/azure-cli/blob/b80a9d5fb0fe558570a365de43ef083cca40212a/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
-  updated_at: 5/4/2017 4:12:39 AM
-  ms.date: 5/4/2017
+  gitcommit: https://github.com/Azure/azure-cli/blob/c3df3ab40c83daee819ee6e4b2b4e1b5b621fec5/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
+  updated_at: 6/3/2017 5:13:44 AM
+  ms.date: 6/3/2017
