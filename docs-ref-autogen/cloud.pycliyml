@@ -127,6 +127,10 @@ children:
     isRequired: False
     summary: The Active Directory login endpoint.
     description: ''
+  - name: --endpoint-active-directory-data-lake-resource-id
+    isRequired: False
+    summary: The Active Directory resource ID for data lake services.
+    description: ''
   - name: --endpoint-active-directory-graph-resource-id
     isRequired: False
     summary: The Active Directory resource ID.
@@ -150,6 +154,10 @@ children:
   - name: --endpoint-sql-management
     isRequired: False
     summary: The sql server management endpoint.
+    description: ''
+  - name: --endpoint-vm-image-alias-doc
+    isRequired: False
+    summary: The uri of the document which caches commonly used virtual machine images.
     description: ''
   - name: --profile
     isRequired: False
@@ -206,7 +214,7 @@ children:
   children: []
   uid: az_cloud_register
   name: az cloud register
-  description: ''
+  description: When registering a cloud, specify only the resource manager endpoint for the autodetection of other endpoints.
   summary: Register a cloud.
   Metadata: {}
 - commandList: []
@@ -217,6 +225,11 @@ children:
     isRequired: True
     summary: Name of a registered cloud.
     description: ''
+  - name: --profile
+    isRequired: False
+    summary: Profile to use for this cloud.
+    description: ''
+    parameterValueGroup: 2017-03-09-profile-preview, latest
   - name: --debug
     isRequired: False
     summary: Increase logging verbosity to show all debug logs.
@@ -345,6 +358,10 @@ children:
     isRequired: False
     summary: The Active Directory login endpoint.
     description: ''
+  - name: --endpoint-active-directory-data-lake-resource-id
+    isRequired: False
+    summary: The Active Directory resource ID for data lake services.
+    description: ''
   - name: --endpoint-active-directory-graph-resource-id
     isRequired: False
     summary: The Active Directory resource ID.
@@ -368,6 +385,10 @@ children:
   - name: --endpoint-sql-management
     isRequired: False
     summary: The sql server management endpoint.
+    description: ''
+  - name: --endpoint-vm-image-alias-doc
+    isRequired: False
+    summary: The uri of the document which caches commonly used virtual machine images.
     description: ''
   - name: --name -n
     isRequired: False
@@ -440,6 +461,6 @@ Metadata:
   doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
   doc_source_url_path: src/command_modules/azure-cli-cloud/azure/cli/command_modules/cloud/_help.py
   original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-cloud/azure/cli/command_modules/cloud/_help.py
-  gitcommit: https://github.com/Azure/azure-cli/blob/71c76c65a64e7dd4788a51d85644b01012f80356/src/command_modules/azure-cli-cloud/azure/cli/command_modules/cloud/_help.py
-  updated_at: 6/8/2017 4:07:47 PM
-  ms.date: 6/8/2017
+  gitcommit: https://github.com/Azure/azure-cli/blob/b312a984232123ec09025f768a8068b076c75bb6/src/command_modules/azure-cli-cloud/azure/cli/command_modules/cloud/_help.py
+  updated_at: 6/23/2017 5:24:06 PM
+  ms.date: 6/23/2017
