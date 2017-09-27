@@ -2,7 +2,7 @@
 items:
 - uid: az_network_traffic_manager_profile
   name: az network traffic-manager profile
-  summary: Manage Traffic Manager profiles.
+  summary: Manage traffic manager profiles.
   description: ''
   langs:
   - azurecli
@@ -63,7 +63,8 @@ items:
     summary: Port to monitor.
     description: ''
   - name: --monitor-protocol
-    defaultValue: http
+    defaultValue: HTTP
+    parameterValueGroup: HTTP, HTTPS, TCP
     summary: Monitor protocol.
     description: ''
   - name: --status
@@ -123,7 +124,7 @@ items:
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_network_traffic_manager_profile_show
   name: az network traffic-manager profile show
-  summary: Show details of a profile.
+  summary: Get the details for a profile.
   description: ''
   langs:
   - azurecli
@@ -164,6 +165,7 @@ items:
     summary: Port to monitor.
     description: ''
   - name: --monitor-protocol
+    parameterValueGroup: HTTP, HTTPS, TCP
     summary: Monitor protocol.
     description: ''
   - name: --routing-method
@@ -210,7 +212,7 @@ commands:
   summary: List profiles.
 - uid: az_network_traffic_manager_profile_show
   name: az network traffic-manager profile show
-  summary: Show details of a profile.
+  summary: Get the details for a profile.
 - uid: az_network_traffic_manager_profile_update
   name: az network traffic-manager profile update
   summary: Update a profile.
@@ -230,6 +232,6 @@ globalParameters:
 doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
 doc_source_url_path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
 original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
-gitcommit: https://github.com/Azure/azure-cli/blob/8f63a18f7a6677ab12f7e96d8b5af0204773bd09/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
-updated_at: 8/26/2017 5:18:32 AM
-ms.date: 8/26/2017
+gitcommit: https://github.com/Azure/azure-cli/blob/eb9a2f48ee2f6e0db2fca60f695a7303f25989aa/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
+updated_at: 9/22/2017 11:00:49 PM
+ms.date: 9/22/2017

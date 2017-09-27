@@ -78,7 +78,7 @@ items:
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_network_route_table_show
   name: az network route-table show
-  summary: Show details of a route table.
+  summary: Get the details for a route table.
   description: ''
   langs:
   - azurecli
@@ -157,13 +157,13 @@ commands:
   summary: List routes in a route table.
 - uid: az_network_route_table_route_show
   name: az network route-table route show
-  summary: Show details of a route in a route table.
+  summary: Get the details of a route in a route table.
 - uid: az_network_route_table_route_update
   name: az network route-table route update
   summary: Update a route in a route table.
 - uid: az_network_route_table_show
   name: az network route-table show
-  summary: Show details of a route table.
+  summary: Get the details for a route table.
 - uid: az_network_route_table_update
   name: az network route-table update
   summary: Update a route table.
@@ -183,6 +183,6 @@ globalParameters:
 doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
 doc_source_url_path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
 original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
-gitcommit: https://github.com/Azure/azure-cli/blob/8f63a18f7a6677ab12f7e96d8b5af0204773bd09/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
-updated_at: 8/26/2017 5:18:32 AM
-ms.date: 8/26/2017
+gitcommit: https://github.com/Azure/azure-cli/blob/eb9a2f48ee2f6e0db2fca60f695a7303f25989aa/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
+updated_at: 9/22/2017 11:00:49 PM
+ms.date: 9/22/2017

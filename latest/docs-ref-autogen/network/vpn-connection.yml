@@ -115,7 +115,7 @@ items:
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_network_vpn_connection_show
   name: az network vpn-connection show
-  summary: Show details of a VPN connection.
+  summary: Get the details of a VPN connection.
   description: ''
   langs:
   - azurecli
@@ -211,13 +211,13 @@ commands:
   summary: Reset a VPN connection shared key.
 - uid: az_network_vpn_connection_shared_key_show
   name: az network vpn-connection shared-key show
-  summary: Show a VPN connection shared key.
+  summary: Retrieve a VPN connection shared key.
 - uid: az_network_vpn_connection_shared_key_update
   name: az network vpn-connection shared-key update
   summary: Update a VPN connection shared key.
 - uid: az_network_vpn_connection_show
   name: az network vpn-connection show
-  summary: Show details of a VPN connection.
+  summary: Get the details of a VPN connection.
 - uid: az_network_vpn_connection_update
   name: az network vpn-connection update
   summary: Update a VPN connection.
@@ -237,6 +237,6 @@ globalParameters:
 doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
 doc_source_url_path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
 original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
-gitcommit: https://github.com/Azure/azure-cli/blob/8f63a18f7a6677ab12f7e96d8b5af0204773bd09/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
-updated_at: 8/26/2017 5:18:32 AM
-ms.date: 8/26/2017
+gitcommit: https://github.com/Azure/azure-cli/blob/eb9a2f48ee2f6e0db2fca60f695a7303f25989aa/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
+updated_at: 9/22/2017 11:00:49 PM
+ms.date: 9/22/2017

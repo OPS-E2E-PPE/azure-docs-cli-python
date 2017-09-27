@@ -19,18 +19,21 @@ items:
   langs:
   - azurecli
   examples:
-  - summary: Create a policy with following rules
+  - summary: Create a read-only policy.
+    syntax:
+      content: 'az policy definition create -n readOnlyStorage --rules     {         "if":         {             "source": "action",             "equals": "Microsoft.Storage/storageAccounts/write"         },         "then":         {             "effect": "deny"         }     }'
+  - summary: Create a policy parameter definition with the following example
     syntax:
       content: >-
         {
-                                    "if":
-                                    {
-                                        "source": "action",
-                                        "equals": "Microsoft.Storage/storageAccounts/write"
-                                    },
-                                    "then":
-                                    {
-                                        "effect": "deny"
+                                    "allowedLocations": {
+                                        "type": "array",
+                                        "metadata": {
+                                            "description": "The list of locations that can be specified
+                                                            when deploying resources",
+                                            "strongType": "location",
+                                            "displayName": "Allowed locations"
+                                        }
                                     }
                                 }
   parameters:
@@ -44,8 +47,15 @@ items:
   - name: --display-name
     summary: Display name of policy definition.
     description: ''
+  - name: --mode -m
+    parameterValueGroup: All, Indexed, NotSpecified
+    summary: Mode of the new policy definition.
+    description: ''
+  - name: --params
+    summary: JSON formatted string or a path to a file or uri with parameter definitions.
+    description: ''
   - name: --rules
-    summary: JSON formatted string or a path to a file with such content.
+    summary: Policy rules in JSON format, or a path to a file containing JSON rules.
     description: ''
   source:
     path: src/command_modules/azure-cli-resource/azure/cli/command_modules/resource/_help.py
@@ -88,7 +98,7 @@ items:
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_policy_definition_show
   name: az policy definition show
-  summary: Gets the policy definition.
+  summary: Get a policy definition.
   description: ''
   langs:
   - azurecli
@@ -120,6 +130,9 @@ items:
   - name: --display-name
     summary: Display name of policy definition.
     description: ''
+  - name: --params
+    summary: JSON formatted string or a path to a file or uri with parameter definitions.
+    description: ''
   - name: --rules
     summary: JSON formatted string or a path to a file or uri with such content.
     description: ''
@@ -141,7 +154,7 @@ commands:
   summary: List policy definitions.
 - uid: az_policy_definition_show
   name: az policy definition show
-  summary: Gets the policy definition.
+  summary: Get a policy definition.
 - uid: az_policy_definition_update
   name: az policy definition update
   summary: Update a policy definition.
@@ -161,6 +174,6 @@ globalParameters:
 doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
 doc_source_url_path: src/command_modules/azure-cli-resource/azure/cli/command_modules/resource/_help.py
 original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-resource/azure/cli/command_modules/resource/_help.py
-gitcommit: https://github.com/Azure/azure-cli/blob/c305b4917b3a5bfc99bda4b484f720439b4e0836/src/command_modules/azure-cli-resource/azure/cli/command_modules/resource/_help.py
-updated_at: 7/27/2017 5:10:33 PM
-ms.date: 7/27/2017
+gitcommit: https://github.com/Azure/azure-cli/blob/9b6260c8a03a1377bf248489ec60ce8aa2c81ee6/src/command_modules/azure-cli-resource/azure/cli/command_modules/resource/_help.py
+updated_at: 9/26/2017 9:49:46 PM
+ms.date: 9/26/2017

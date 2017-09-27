@@ -19,19 +19,22 @@ items:
   langs:
   - azurecli
   examples:
-  - summary: Create a new event subscription with default filters
+  - summary: Create a new event subscription with default filters.
     syntax:
-      content: az eventgrid topic event-subscription create -g rg1 --topic-name topic1 --name es1 --endpoint https://<yourfunction>.azurewebsites.net/api/f1?code=<code>
-  - summary: Create a new event subscription with a filter specifying a subject prefix
+      content: az eventgrid topic event-subscription create -g rg1 --topic-name topic1 --name es1     --endpoint https://contoso.azurewebsites.net/api/f1?code=code
+  - summary: Create a new event subscription with a filter specifying a subject prefix.
     syntax:
-      content: az eventgrid topic event-subscription create -g rg1 --topic-name topic1 --name es1 --endpoint https://<yourfunction>.azurewebsites.net/api/f1?code=<code> --subject-begins-with mysubject_prefix
-  - summary: Create a new event subscription with default filters and with additional labels
+      content: az eventgrid topic event-subscription create -g rg1 --topic-name topic1 --name es1     --endpoint https://contoso.azurewebsites.net/api/f1?code=code     --subject-begins-with mysubject_prefix
+  - summary: Create a new event subscription with default filters and additional labels.
     syntax:
-      content: az eventgrid topic event-subscription create -g rg1 --topic-name topic1 --name es1 --endpoint https://<yourfunction>.azurewebsites.net/api/f1?code=<code> --labels Finance HR
+      content: az eventgrid topic event-subscription create -g rg1 --topic-name topic1 --name es1     --endpoint https://contoso.azurewebsites.net/api/f1?code=code     --labels Finance HR
+  - summary: Create a new event subscription with an EventHub as a destination.
+    syntax:
+      content: az eventgrid topic event-subscription create -g rg1 --topic-name topic1 --name es1     --endpoint-type eventhub     --endpoint /subscriptions/55f3dcd4-cac7-43b4-990b-a139d62a1eb2/resourceGroups/TestRG/providers/Microsoft.EventHub/namespaces/ContosoNamespace/eventhubs/EH1     --labels Finance HR
   parameters:
   - isRequired: true
     name: --endpoint
-    summary: Endpoint where EventGrid should deliver events matching this event subscription.
+    summary: Endpoint where EventGrid should deliver events matching this event subscription. For webhook endpoint type, this should be the corresponding webhook URL. For eventhub endpoint type, this should be the Azure ResourceID of the event hub.
     description: ''
   - isRequired: true
     name: --name -n
@@ -47,7 +50,7 @@ items:
     description: ''
   - name: --endpoint-type
     defaultValue: WebHook
-    parameterValueGroup: WebHook
+    parameterValueGroup: eventhub, webhook
     summary: ''
     description: ''
   - name: --included-event-types
@@ -99,7 +102,7 @@ items:
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_eventgrid_topic_event_subscription_list
   name: az eventgrid topic event-subscription list
-  summary: List the event subscriptions for a topic.
+  summary: List event subscriptions for a topic.
   description: ''
   langs:
   - azurecli
@@ -120,7 +123,7 @@ items:
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_eventgrid_topic_event_subscription_show
   name: az eventgrid topic event-subscription show
-  summary: Get the properties of an event subscription for a topic.
+  summary: Get the details of an event subscription for a topic.
   description: ''
   langs:
   - azurecli
@@ -177,10 +180,10 @@ commands:
   summary: Delete an event subscription for a topic.
 - uid: az_eventgrid_topic_event_subscription_list
   name: az eventgrid topic event-subscription list
-  summary: List the event subscriptions for a topic.
+  summary: List event subscriptions for a topic.
 - uid: az_eventgrid_topic_event_subscription_show
   name: az eventgrid topic event-subscription show
-  summary: Get the properties of an event subscription for a topic.
+  summary: Get the details of an event subscription for a topic.
 - uid: az_eventgrid_topic_event_subscription_show_endpoint_url
   name: az eventgrid topic event-subscription show-endpoint-url
   summary: Get the full endpoint URL of an event subscription for a topic.
@@ -200,6 +203,6 @@ globalParameters:
 doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
 doc_source_url_path: src/command_modules/azure-cli-eventgrid/azure/cli/command_modules/eventgrid/_help.py
 original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-eventgrid/azure/cli/command_modules/eventgrid/_help.py
-gitcommit: https://github.com/Azure/azure-cli/blob/4f6eb33c6d0c9c8acd27c9135896849b6c86cba0/src/command_modules/azure-cli-eventgrid/azure/cli/command_modules/eventgrid/_help.py
-updated_at: 8/10/2017 9:22:41 PM
-ms.date: 8/10/2017
+gitcommit: https://github.com/Azure/azure-cli/blob/db283fe59a83ce9b604af62da750dffe886ce0ff/src/command_modules/azure-cli-eventgrid/azure/cli/command_modules/eventgrid/_help.py
+updated_at: 9/18/2017 6:24:04 PM
+ms.date: 9/18/2017

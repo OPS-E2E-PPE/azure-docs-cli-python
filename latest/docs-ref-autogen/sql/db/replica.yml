@@ -13,7 +13,7 @@ items:
   - az_sql_db_replica_set_primary
 - uid: az_sql_db_replica_create
   name: az sql db replica create
-  summary: Creates a database as a readable secondary replica of an existing database.
+  summary: Create a database as a readable secondary replica of an existing database.
   description: ''
   langs:
   - azurecli
@@ -37,6 +37,9 @@ items:
   - name: --elastic-pool
     summary: Name of elastic pool to create the new replica in.
     description: ''
+  - name: --no-wait
+    summary: Do not wait for the long running operation to finish.
+    description: ''
   - name: --partner-resource-group
     summary: Name of the resource group to create the new replica in. If unspecified, defaults to the origin resource group.
     description: ''
@@ -54,7 +57,7 @@ items:
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_sql_db_replica_delete_link
   name: az sql db replica delete-link
-  summary: Permanently stops data replication between two database replicas.
+  summary: Permanently stop data replication between two database replicas.
   description: ''
   langs:
   - azurecli
@@ -89,7 +92,7 @@ items:
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_sql_db_replica_list_links
   name: az sql db replica list-links
-  summary: Lists the replicas of a database and corresponding replication status.
+  summary: List the replicas of a database and their replication status.
   description: ''
   langs:
   - azurecli
@@ -114,7 +117,7 @@ items:
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_sql_db_replica_set_primary
   name: az sql db replica set-primary
-  summary: Sets which replica database is primary by failing over from the current primary replica database.
+  summary: Set the primary replica database by failing over from the current primary replica database.
   description: ''
   langs:
   - azurecli
@@ -143,16 +146,16 @@ items:
 commands:
 - uid: az_sql_db_replica_create
   name: az sql db replica create
-  summary: Creates a database as a readable secondary replica of an existing database.
+  summary: Create a database as a readable secondary replica of an existing database.
 - uid: az_sql_db_replica_delete_link
   name: az sql db replica delete-link
-  summary: Permanently stops data replication between two database replicas.
+  summary: Permanently stop data replication between two database replicas.
 - uid: az_sql_db_replica_list_links
   name: az sql db replica list-links
-  summary: Lists the replicas of a database and corresponding replication status.
+  summary: List the replicas of a database and their replication status.
 - uid: az_sql_db_replica_set_primary
   name: az sql db replica set-primary
-  summary: Sets which replica database is primary by failing over from the current primary replica database.
+  summary: Set the primary replica database by failing over from the current primary replica database.
 globalParameters:
 - name: --debug
   summary: Increase logging verbosity to show all debug logs.
@@ -169,6 +172,6 @@ globalParameters:
 doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
 doc_source_url_path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
 original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
-gitcommit: https://github.com/Azure/azure-cli/blob/f6c8d19bd4f04aaad601cb58c0c07999bf123f52/src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
-updated_at: 7/6/2017 3:46:49 PM
-ms.date: 7/6/2017
+gitcommit: https://github.com/Azure/azure-cli/blob/e1ec6ed80f6e83813fd3cbb4189c3336f6a35de7/src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
+updated_at: 9/26/2017 7:46:39 PM
+ms.date: 9/26/2017

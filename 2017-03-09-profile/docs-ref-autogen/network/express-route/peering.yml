@@ -18,6 +18,10 @@ items:
   description: ''
   langs:
   - azurecli
+  examples:
+  - summary: Create Microsoft Peering settings with IPv4 configuration.
+    syntax:
+      content: az network express-route peering create -g myrg --circuit-name circuit1 --peering-type MicrosoftPeering --peer-asn 10002 --vlan-id 103 --primary-peer-subnet 101.0.0.0/30 --secondary-peer-subnet 102.0.0.0/30 --advertised-public-prefixes 101.0.0.0/30
   parameters:
   - isRequired: true
     name: --circuit-name
@@ -115,7 +119,7 @@ items:
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_network_express_route_peering_show
   name: az network express-route peering show
-  summary: Show peering details.
+  summary: Get the details for an express route peering.
   description: ''
   langs:
   - azurecli
@@ -178,6 +182,11 @@ items:
   - name: --customer-asn
     summary: Autonomous system number of the customer.
     description: ''
+  - name: --ip-version
+    defaultValue: IPv4
+    parameterValueGroup: IPv4, IPv6
+    summary: The IP version to update Microsoft Peering settings for.
+    description: ''
   - name: --routing-registry-name
     parameterValueGroup: AFRINIC, ALTDB, APNIC, ARIN, LACNIC, LEVEL3, RADB, RIPENCC
     summary: Internet Routing Registry / Regional Internet Registry.
@@ -209,7 +218,7 @@ commands:
   summary: List peering settings.
 - uid: az_network_express_route_peering_show
   name: az network express-route peering show
-  summary: Show peering details.
+  summary: Get the details for an express route peering.
 - uid: az_network_express_route_peering_update
   name: az network express-route peering update
   summary: Update peering settings.
@@ -229,6 +238,6 @@ globalParameters:
 doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
 doc_source_url_path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
 original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
-gitcommit: https://github.com/Azure/azure-cli/blob/8f63a18f7a6677ab12f7e96d8b5af0204773bd09/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
-updated_at: 8/26/2017 5:18:32 AM
-ms.date: 8/26/2017
+gitcommit: https://github.com/Azure/azure-cli/blob/eb9a2f48ee2f6e0db2fca60f695a7303f25989aa/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
+updated_at: 9/22/2017 11:00:49 PM
+ms.date: 9/22/2017

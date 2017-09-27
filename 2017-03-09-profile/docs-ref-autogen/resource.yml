@@ -9,6 +9,7 @@ items:
   children:
   - az_resource_create
   - az_resource_delete
+  - az_resource_invoke_action
   - az_resource_list
   - az_resource_move
   - az_resource_show
@@ -21,12 +22,15 @@ items:
   langs:
   - azurecli
   examples:
-  - summary: Create a resource, such as an API App, by providing a full resource object json. Note, you can also use `@<file>` to load from a json file.
+  - summary: Create an API app by providing a full JSON configuration.
     syntax:
-      content: az resource create -g myRG -n myApiApp --resource-type Microsoft.web/sites --is-full-object --properties "{"kind":"api", "location":"West US", "properties":{"serverFarmId":"/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourcegroups/myRG/providers/Microsoft.Web/serverfarms/appServicePlan1"}}"
-  - summary: Create a resource, such as a Web App, by only providing resource properties
+      content: "az resource create -g myRG -n myApiApp --resource-type Microsoft.web/sites --is-full-object --properties         '{            \"kind\": \"api\",            \"location\": \"West US\",            \"properties\": {                \"serverFarmId\": \"/subscriptions/{SubID}/resourcegroups/{MyRG}/providers/Microsoft.Web/serverfarms/{MyServicePlan}\"            }        }'"
+  - summary: Create a resource by loading JSON configuration from a file.
     syntax:
-      content: az resource create -g myRG -n myWeb --resource-type Microsoft.web/sites --properties "{"serverFarmId":"/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourcegroups/myRG/providers/Microsoft.Web/serverfarms/appServicePlan1"}"
+      content: az resource create -g myRG -n myApiApp --resource-type Microsoft.web/sites --is-full-object --properties @jsonConfigFile
+  - summary: Create a web app with the minimum required configuration information.
+    syntax:
+      content: az resource create -g myRG -n myWeb --resource-type Microsoft.web/sites --properties     {         "serverFarmId":"/subscriptions/{SubID}/resourcegroups/{MyRG}/providers/Microsoft.Web/serverfarms/{MyServicePlan}"     }
   parameters:
   - isRequired: true
     name: --properties -p
@@ -67,20 +71,20 @@ items:
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_resource_delete
   name: az resource delete
-  summary: Delete a resource. Reference the examples for help with arguments.
-  description: For example, /subscriptions/0000/resourceGroups/MyResourceGroup/providers/Microsoft.Provider/ResA/MyA/ResB/MyB/ResC/MyC.
+  summary: Delete a resource.
+  description: ''
   langs:
   - azurecli
   examples:
-  - summary: Delete a virtual machine.
+  - summary: Delete a virtual machine named 'MyVm'.
     syntax:
       content: az vm delete -g MyResourceGroup -n MyVm --resource-type "Microsoft.Compute/virtualMachines"
   - summary: Delete a web app using a resource identifier.
     syntax:
-      content: az resource delete --id /subscriptions/0b1f6471-1bf0-4dda-aec3-111111111111/resourceGroups/MyResourceGroup/providers/Microsoft.Web/sites/MyWebapp
+      content: az resource delete --id /subscriptions/{SubID}/resourceGroups/{MyRG}/providers/Microsoft.Web/sites/{MyWebApp}
   - summary: Delete a subnet using a resource identifier.
     syntax:
-      content: az resource delete --id /subscriptions/0b1f6471-1bf0-4dda-aec3-111111111111/resourceGroups/MyResourceGroup/providers/Microsoft.Network/virtualNetworks/MyVnet/subnets/MySubnet
+      content: az resource delete --id /subscriptions/{SubID}/resourceGroups/{MyRG}/providers/Microsoft.Network/virtualNetworks/{MyVNET}/subnets/{MySubnet}
   parameters:
   - name: --api-version
     summary: The api version of the resource (omit for latest).
@@ -106,6 +110,51 @@ items:
       branch: master
       path: src/command_modules/azure-cli-resource/azure/cli/command_modules/resource/_help.py
       repo: https://github.com/Azure/azure-cli.git
+- uid: az_resource_invoke_action
+  name: az resource invoke-action
+  summary: Invoke an action on the resource.
+  description: A list of possible actions corresponding to a resource can be found at <a href="https://docs.microsoft.com/en-us/rest/api/">https://docs.microsoft.com/en-us/rest/api/</a>. All POST requests are actions that can be invoked and are specified at the end of the URI path. For instance, to stop a VM, the request URI is <a href="https://management.azure.com/subscriptions">https://management.azure.com/subscriptions</a>/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.Compute/virtualMachines/{vm}/powerOff?api-version={apiVersion} and the corresponding action is `powerOff`. This can be found at <a href="https://docs.microsoft.com/en-us/rest/api/compute/virtualmachines/virtualmachines-stop">https://docs.microsoft.com/en-us/rest/api/compute/virtualmachines/virtualmachines-stop</a>.
+  langs:
+  - azurecli
+  examples:
+  - summary: Power-off a vm, specified by Id.
+    syntax:
+      content: az resource invoke-action --action powerOff --ids /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myVM
+  - summary: Capture information for a stopped vm.
+    syntax:
+      content: az resource invoke-action --action capture --ids /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myVM --request-body {"vhdPrefix":"myPrefix","destinationContainerName":"myContainer","overwriteVhds":"true"}
+  parameters:
+  - isRequired: true
+    name: --action
+    summary: The action that will be invoked on the specified resource.
+    description: ''
+  - name: --api-version
+    summary: The api version of the resource (omit for latest).
+    description: ''
+  - name: --name -n
+    summary: 'The resource name. (Ex: myC).'
+    description: ''
+  - name: --namespace
+    summary: "Provider namespace (Ex: 'Microsoft.Provider')."
+    description: ''
+  - name: --parent
+    summary: "The parent path (Ex: 'resA/myA/resB/myB')."
+    description: ''
+  - name: --request-body
+    summary: JSON encoded parameter arguments for the action that will be passed along in the post request body. Use @{file} to load from a file.
+    description: ''
+  - name: --resource-group -g
+    summary: Name of resource group. You can configure the default group using `az configure --defaults group=&lt;name&gt;`.
+    description: ''
+  - name: --resource-type
+    summary: "The resource type (Ex: 'resC'). Can also accept namespace/type format (Ex: 'Microsoft.Provider/resC')."
+    description: ''
+  source:
+    path: src/command_modules/azure-cli-resource/azure/cli/command_modules/resource/_help.py
+    remote:
+      branch: master
+      path: src/command_modules/azure-cli-resource/azure/cli/command_modules/resource/_help.py
+      repo: https://github.com/Azure/azure-cli.git
 - uid: az_resource_list
   name: az resource list
   summary: List resources.
@@ -113,21 +162,21 @@ items:
   langs:
   - azurecli
   examples:
-  - summary: List all resource in a region.
+  - summary: List all resources in the West US region.
     syntax:
       content: az resource list --location westus
-  - summary: List resource using a name.
+  - summary: List all resources with the name 'resourceName'.
     syntax:
-      content: az resource list --name thename
-  - summary: List resources using a tag.
+      content: az resource list --name 'resourceName'
+  - summary: List all resources with the tag 'test'.
     syntax:
-      content: az resource list --tag something
-  - summary: List resources using a tag with a particular prefix.
+      content: az resource list --tag test
+  - summary: List all resources with a tag that starts with 'test'.
     syntax:
-      content: az resource list --tag some*
-  - summary: List resources using a tag value.
+      content: az resource list --tag test*
+  - summary: List all resources with the tag 'test' that have the value 'example'.
     syntax:
-      content: az resource list --tag something=else
+      content: az resource list --tag test=example
   parameters:
   - name: --location -l
     summary: Location. You can configure the default location using `az configure --defaults location=&lt;location&gt;`.
@@ -179,23 +228,23 @@ items:
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_resource_show
   name: az resource show
-  summary: Get information about a resource.
-  description: For example /subscriptions/0000/resourceGroups/MyResourceGroup/providers/Microsoft.Provider/ResA/MyA/ResB/MyB/resC/MyC.
+  summary: Get the details of a resource.
+  description: ''
   langs:
   - azurecli
   examples:
-  - summary: Show a virtual machine.
+  - summary: Show a virtual machine resource named 'MyVm'.
     syntax:
       content: az vm show -g MyResourceGroup -n MyVm --resource-type "Microsoft.Compute/virtualMachines"
   - summary: Show a web app using a resource identifier.
     syntax:
-      content: az resource show --id /subscriptions/0b1f6471-1bf0-4dda-aec3-111111111111/resourceGroups/MyResourceGroup/providers/Microsoft.Web/sites/MyWebapp
-  - summary: Show a subnet.
+      content: az resource show --id /subscriptions/{SubID}/resourceGroups/{MyRG}/providers/Microsoft.Web/sites/{MyWebapp}
+  - summary: Show a subnet in the 'Microsoft.Network' namespace which belongs to the virtual network 'MyVnet'.
     syntax:
-      content: az resource show -g MyResourceGroup -n MySubnet --namespace microsoft.network --parent virtualnetworks/MyVnet --resource-type subnets
+      content: az resource show -g MyResourceGroup -n MySubnet --namespace Microsoft.Network --parent virtualnetworks/MyVnet --resource-type subnets
   - summary: Show a subnet using a resource identifier.
     syntax:
-      content: az resource show --id /subscriptions/0b1f6471-1bf0-4dda-aec3-111111111111/resourceGroups/MyResourceGroup/providers/Microsoft.Network/virtualNetworks/MyVnet/subnets/MySubnet
+      content: az resource show --id /subscriptions/{SubID}/resourceGroups/{MyRG}/providers/Microsoft.Network/virtualNetworks/{MyVnet}/subnets/{MySubnet}
   - summary: Show an application gateway path rule.
     syntax:
       content: az resource show -g MyResourceGroup --namespace Microsoft.Network --parent applicationGateways/ag1/urlPathMaps/map1 --resource-type pathRules -n rule1
@@ -226,17 +275,17 @@ items:
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_resource_tag
   name: az resource tag
-  summary: Tag a resource. Reference the examples for help with arguments.
-  description: For example, /subscriptions/0000/resourceGroups/MyResourceGroup/providers/Microsoft.Provider/ResA/MyA/ResB/MyB/resC/MyC.
+  summary: Tag a resource.
+  description: ''
   langs:
   - azurecli
   examples:
-  - summary: Tag a virtual machine.
+  - summary: Tag the virtual machine 'MyVm' with the key 'vmlist' and value 'vm1'.
     syntax:
       content: az resource tag --tags vmlist=vm1 -g MyResourceGroup -n MyVm --resource-type "Microsoft.Compute/virtualMachines"
-  - summary: Tag a web app using a resource identifier.
+  - summary: Tag a web app with the key 'vmlist' and value 'vm1', using a resource identifier.
     syntax:
-      content: az resource tag --tags vmlist=vm1 --id /subscriptions/0b1f6471-1bf0-4dda-aec3-111111111111/resourceGroups/MyResourceGroup/providers/Microsoft.Web/sites/MyWebapp
+      content: az resource tag --tags vmlist=vm1 --id /subscriptions/{SubID}/resourceGroups/{MyRG}/providers/Microsoft.Web/sites/{MyWebApp}
   parameters:
   - isRequired: true
     name: --tags
@@ -312,7 +361,10 @@ commands:
   summary: Create a resource.
 - uid: az_resource_delete
   name: az resource delete
-  summary: Delete a resource. Reference the examples for help with arguments.
+  summary: Delete a resource.
+- uid: az_resource_invoke_action
+  name: az resource invoke-action
+  summary: Invoke an action on the resource.
 - uid: az_resource_link
   name: az resource link
   summary: Manage links between resources.
@@ -324,10 +376,10 @@ commands:
   summary: Delete a link between resources.
 - uid: az_resource_link_list
   name: az resource link list
-  summary: List all resource links.
+  summary: List resource links.
 - uid: az_resource_link_show
   name: az resource link show
-  summary: Show a specific link.
+  summary: Get details for a resource link.
 - uid: az_resource_link_update
   name: az resource link update
   summary: Update link between resources.
@@ -339,10 +391,10 @@ commands:
   summary: Moves resources from one resource group to another(can be under different subscription).
 - uid: az_resource_show
   name: az resource show
-  summary: Get information about a resource.
+  summary: Get the details of a resource.
 - uid: az_resource_tag
   name: az resource tag
-  summary: Tag a resource. Reference the examples for help with arguments.
+  summary: Tag a resource.
 - uid: az_resource_update
   name: az resource update
   summary: Update a resource.
@@ -362,6 +414,6 @@ globalParameters:
 doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
 doc_source_url_path: src/command_modules/azure-cli-resource/azure/cli/command_modules/resource/_help.py
 original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-resource/azure/cli/command_modules/resource/_help.py
-gitcommit: https://github.com/Azure/azure-cli/blob/c305b4917b3a5bfc99bda4b484f720439b4e0836/src/command_modules/azure-cli-resource/azure/cli/command_modules/resource/_help.py
-updated_at: 7/27/2017 5:10:33 PM
-ms.date: 7/27/2017
+gitcommit: https://github.com/Azure/azure-cli/blob/9b6260c8a03a1377bf248489ec60ce8aa2c81ee6/src/command_modules/azure-cli-resource/azure/cli/command_modules/resource/_help.py
+updated_at: 9/26/2017 9:49:46 PM
+ms.date: 9/26/2017

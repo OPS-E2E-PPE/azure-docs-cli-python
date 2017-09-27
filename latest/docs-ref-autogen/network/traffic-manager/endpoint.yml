@@ -2,7 +2,7 @@
 items:
 - uid: az_network_traffic_manager_endpoint
   name: az network traffic-manager endpoint
-  summary: Manage Traffic Manager end points.
+  summary: Manage traffic manager end points.
   description: ''
   langs:
   - azurecli
@@ -128,7 +128,7 @@ items:
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_network_traffic_manager_endpoint_show
   name: az network traffic-manager endpoint show
-  summary: Show details of an endpoint.
+  summary: Get the details for an endpoint.
   description: ''
   langs:
   - azurecli
@@ -246,7 +246,7 @@ commands:
   summary: List endpoints.
 - uid: az_network_traffic_manager_endpoint_show
   name: az network traffic-manager endpoint show
-  summary: Show details of an endpoint.
+  summary: Get the details for an endpoint.
 - uid: az_network_traffic_manager_endpoint_show_geographic_hierarchy
   name: az network traffic-manager endpoint show-geographic-hierarchy
   summary: Gets the default Geographic Hierarchy used by the Geographic traffic routing method.
@@ -269,6 +269,6 @@ globalParameters:
 doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
 doc_source_url_path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
 original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
-gitcommit: https://github.com/Azure/azure-cli/blob/8f63a18f7a6677ab12f7e96d8b5af0204773bd09/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
-updated_at: 8/26/2017 5:18:32 AM
-ms.date: 8/26/2017
+gitcommit: https://github.com/Azure/azure-cli/blob/eb9a2f48ee2f6e0db2fca60f695a7303f25989aa/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
+updated_at: 9/22/2017 11:00:49 PM
+ms.date: 9/22/2017

@@ -14,7 +14,7 @@ items:
   - az_sql_server_firewall_rule_update
 - uid: az_sql_server_firewall_rule_create
   name: az sql server firewall-rule create
-  summary: Creates a firewall rule.
+  summary: Create a firewall rule.
   description: ''
   langs:
   - azurecli
@@ -33,7 +33,7 @@ items:
     description: ''
   - isRequired: true
     name: --server -s
-    summary: The name of the Azure SQL server.
+    summary: Name of the Azure SQL server.
     description: ''
   - isRequired: true
     name: --start-ip-address
@@ -62,7 +62,7 @@ items:
     description: ''
   - isRequired: true
     name: --server -s
-    summary: The name of the Azure SQL server.
+    summary: Name of the Azure SQL server.
     description: ''
   source:
     path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
@@ -72,7 +72,7 @@ items:
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_sql_server_firewall_rule_list
   name: az sql server firewall-rule list
-  summary: Lists the firewall rules.
+  summary: List a server's firewall rules.
   description: ''
   langs:
   - azurecli
@@ -83,7 +83,7 @@ items:
     description: ''
   - isRequired: true
     name: --server -s
-    summary: The name of the Azure SQL server.
+    summary: Name of the Azure SQL server.
     description: ''
   source:
     path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
@@ -93,7 +93,7 @@ items:
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_sql_server_firewall_rule_show
   name: az sql server firewall-rule show
-  summary: Shows the detail of a firewall rule.
+  summary: Shows the details for a firewall rule.
   description: ''
   langs:
   - azurecli
@@ -108,7 +108,7 @@ items:
     description: ''
   - isRequired: true
     name: --server -s
-    summary: The name of the Azure SQL server.
+    summary: Name of the Azure SQL server.
     description: ''
   source:
     path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
@@ -118,7 +118,7 @@ items:
       repo: https://github.com/Azure/azure-cli.git
 - uid: az_sql_server_firewall_rule_update
   name: az sql server firewall-rule update
-  summary: Updates a firewall rule.
+  summary: Update a firewall rule.
   description: ''
   langs:
   - azurecli
@@ -133,7 +133,7 @@ items:
     description: ''
   - isRequired: true
     name: --server -s
-    summary: The name of the Azure SQL server.
+    summary: Name of the Azure SQL server.
     description: ''
   - name: --end-ip-address
     summary: The end IP address of the firewall rule. Must be IPv4 format. Use value '0.0.0.0' to represent all Azure-internal IP addresses.
@@ -150,19 +150,19 @@ items:
 commands:
 - uid: az_sql_server_firewall_rule_create
   name: az sql server firewall-rule create
-  summary: Creates a firewall rule.
+  summary: Create a firewall rule.
 - uid: az_sql_server_firewall_rule_delete
   name: az sql server firewall-rule delete
   summary: Deletes a firewall rule.
 - uid: az_sql_server_firewall_rule_list
   name: az sql server firewall-rule list
-  summary: Lists the firewall rules.
+  summary: List a server's firewall rules.
 - uid: az_sql_server_firewall_rule_show
   name: az sql server firewall-rule show
-  summary: Shows the detail of a firewall rule.
+  summary: Shows the details for a firewall rule.
 - uid: az_sql_server_firewall_rule_update
   name: az sql server firewall-rule update
-  summary: Updates a firewall rule.
+  summary: Update a firewall rule.
 globalParameters:
 - name: --debug
   summary: Increase logging verbosity to show all debug logs.
@@ -179,6 +179,6 @@ globalParameters:
 doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
 doc_source_url_path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
 original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
-gitcommit: https://github.com/Azure/azure-cli/blob/f6c8d19bd4f04aaad601cb58c0c07999bf123f52/src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
-updated_at: 7/6/2017 3:46:49 PM
-ms.date: 7/6/2017
+gitcommit: https://github.com/Azure/azure-cli/blob/e1ec6ed80f6e83813fd3cbb4189c3336f6a35de7/src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
+updated_at: 9/26/2017 7:46:39 PM
+ms.date: 9/26/2017
