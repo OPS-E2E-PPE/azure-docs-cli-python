@@ -150,6 +150,79 @@
         - name: Show
           uid: az_backup_vault_backup_properties_show
           displayName: az backup vault backup-properties show
+  - name: Batchai
+    uid: az_batchai
+    displayName: az batchai
+    items:
+    - name: Cluster
+      uid: az_batchai_cluster
+      displayName: az batchai cluster
+      items:
+      - name: Auto-Scale
+        uid: az_batchai_cluster_auto_scale
+        displayName: az batchai cluster auto-scale
+      - name: Create
+        uid: az_batchai_cluster_create
+        displayName: az batchai cluster create
+      - name: Delete
+        uid: az_batchai_cluster_delete
+        displayName: az batchai cluster delete
+      - name: List
+        uid: az_batchai_cluster_list
+        displayName: az batchai cluster list
+      - name: List-Nodes
+        uid: az_batchai_cluster_list_nodes
+        displayName: az batchai cluster list-nodes
+      - name: Resize
+        uid: az_batchai_cluster_resize
+        displayName: az batchai cluster resize
+      - name: Show
+        uid: az_batchai_cluster_show
+        displayName: az batchai cluster show
+    - name: File-Server
+      uid: az_batchai_file_server
+      displayName: az batchai file-server
+      items:
+      - name: Create
+        uid: az_batchai_file_server_create
+        displayName: az batchai file-server create
+      - name: Delete
+        uid: az_batchai_file_server_delete
+        displayName: az batchai file-server delete
+      - name: List
+        uid: az_batchai_file_server_list
+        displayName: az batchai file-server list
+      - name: Show
+        uid: az_batchai_file_server_show
+        displayName: az batchai file-server show
+    - name: Job
+      uid: az_batchai_job
+      displayName: az batchai job
+      items:
+      - name: Create
+        uid: az_batchai_job_create
+        displayName: az batchai job create
+      - name: Delete
+        uid: az_batchai_job_delete
+        displayName: az batchai job delete
+      - name: List
+        uid: az_batchai_job_list
+        displayName: az batchai job list
+      - name: List-Files
+        uid: az_batchai_job_list_files
+        displayName: az batchai job list-files
+      - name: List-Nodes
+        uid: az_batchai_job_list_nodes
+        displayName: az batchai job list-nodes
+      - name: Show
+        uid: az_batchai_job_show
+        displayName: az batchai job show
+      - name: Stream-File
+        uid: az_batchai_job_stream_file
+        displayName: az batchai job stream-file
+      - name: Terminate
+        uid: az_batchai_job_terminate
+        displayName: az batchai job terminate
   - name: Cloud Management
     uid: az_cloud
     displayName: az cloud
@@ -1581,6 +1654,25 @@
         - name: Show
           uid: az_group_deployment_operation_show
           displayName: az group deployment operation show
+    - name: Lock
+      uid: az_group_lock
+      displayName: az group lock
+      items:
+      - name: Create
+        uid: az_group_lock_create
+        displayName: az group lock create
+      - name: Delete
+        uid: az_group_lock_delete
+        displayName: az group lock delete
+      - name: List
+        uid: az_group_lock_list
+        displayName: az group lock list
+      - name: Show
+        uid: az_group_lock_show
+        displayName: az group lock show
+      - name: Update
+        uid: az_group_lock_update
+        displayName: az group lock update
   - name: Resource Policies
     uid: az_policy
     displayName: az policy
@@ -1712,6 +1804,25 @@
       - name: Update
         uid: az_resource_link_update
         displayName: az resource link update
+    - name: Lock
+      uid: az_resource_lock
+      displayName: az resource lock
+      items:
+      - name: Create
+        uid: az_resource_lock_create
+        displayName: az resource lock create
+      - name: Delete
+        uid: az_resource_lock_delete
+        displayName: az resource lock delete
+      - name: List
+        uid: az_resource_lock_list
+        displayName: az resource lock list
+      - name: Show
+        uid: az_resource_lock_show
+        displayName: az resource lock show
+      - name: Update
+        uid: az_resource_lock_update
+        displayName: az resource lock update
   - name: Roles
     uid: az_role
     displayName: az role
@@ -2293,6 +2404,25 @@
     - name: Show
       uid: az_account_show
       displayName: az account show
+    - name: Lock
+      uid: az_account_lock
+      displayName: az account lock
+      items:
+      - name: Create
+        uid: az_account_lock_create
+        displayName: az account lock create
+      - name: Delete
+        uid: az_account_lock_delete
+        displayName: az account lock delete
+      - name: List
+        uid: az_account_lock_list
+        displayName: az account lock list
+      - name: Show
+        uid: az_account_lock_show
+        displayName: az account lock show
+      - name: Update
+        uid: az_account_lock_update
+        displayName: az account lock update
   - name: VM Images
     uid: az_image
     displayName: az image
@@ -2674,6 +2804,9 @@
     - name: Stop
       uid: az_webapp_stop
       displayName: az webapp stop
+    - name: Update
+      uid: az_webapp_update
+      displayName: az webapp update
     - name: Auth
       uid: az_webapp_auth
       displayName: az webapp auth
