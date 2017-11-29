@@ -38,7 +38,8 @@ The simplest way to get started is to [launch Cloud Shell](/azure/cloud-shell/qu
 
    ![Create a storage account](media/get-started-with-azure-cli/storage-prompt.png)
 
-You can also [install](install-azure-cli.md) the CLI and run it locally from the command line.
+You can also [install](install-azure-cli.md) the CLI and run it locally from the command line. Once you have installed the CLI,
+run `az login` to log in with your default subscription.
 
 ## Create a Resource Group
 
@@ -339,7 +340,7 @@ as shape the output of any returned result.
 For example, execute the following command to query for any VM resource within any resource group that contains the letters "My":
 
 ```azurecli-interactive
-az vm list --output table --query "[?contains(resourceGroup,'MY')]" 
+az vm list --output table --query "[?contains(resourceGroup, 'MY')]" 
 ```
 
 ```Output
@@ -353,7 +354,7 @@ We could then choose to further refine the output by using the shaping capabilit
 as well.  For example, the following command retrieves the type of OS disk the VM is using to determine whether the OS is Linux or Windows based:
 
 ```azurecli-interactive
-az vm list --output table --query "[?contains(resourceGroup,'MY')].{ VMName:name,OSType:storageProfile.osDisk.osType }" 
+az vm list --output table --query "[?contains(resourceGroup, 'MY')].{ VMName:name, OSType:storageProfile.osDisk.osType }" 
 ```
 
 ```Output
