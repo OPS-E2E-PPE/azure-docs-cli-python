@@ -131,7 +131,7 @@
          "dest": "azure-cli-2017-03-09-profile" 
        }
      },
-    "overwrite": ["/2017-03-09-profile/docs-ref-autogen/overwrite/*.md"],
+    "overwrite": ["2017-03-09-profile/docs-ref-autogen/overwrite/*.md"],
     "externalReference": [],
     "globalMetadata": {
       "breadcrumb_path": "/cli/azure/breadcrumb/toc.json",
