@@ -85,6 +85,7 @@
           "**/TOC.md",
           "**/obj/**",
           "**/includes/**",
+          "**/overwrite/*.md"
           "README.md",
           "LICENSE",
           "LICENSE-CODE",
