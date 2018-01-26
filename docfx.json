@@ -68,6 +68,7 @@
           "**/obj/**",
           "**/includes/**",
           "README.md",
+          "**/overwrite/*.md",
           "LICENSE",
           "LICENSE-CODE",
           "ThirdPartyNotices"
@@ -85,7 +86,6 @@
           "**/TOC.md",
           "**/obj/**",
           "**/includes/**",
-          "**/overwrite/*.md"
           "README.md",
           "LICENSE",
           "LICENSE-CODE",
