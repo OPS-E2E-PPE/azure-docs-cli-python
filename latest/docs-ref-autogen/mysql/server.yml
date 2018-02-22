@@ -56,7 +56,7 @@ items:
     summary: The max storage size of the server, unit is MB.
     description: ''
   - name: --tags
-    summary: Space separated tags in 'key[=value]' format. Use "" to clear existing tags.
+    summary: Space-separated tags in 'key[=value]' format. Use "" to clear existing tags.
     description: ''
   - name: --version
     summary: Server version.
@@ -115,7 +115,7 @@ items:
       content: az mysql server restore -g testgroup -n testsvrnew --source-server testsvr --restore-point-in-time "2017-06-15T13:10:00Z"
   - summary: Restore 'testsvr2' to 'testsvrnew', where 'testsvrnew' is in a different resource group than the backup.
     syntax:
-      content: az mysql server restore -g testgroup -n testsvrnew     -s "/subscriptions/{SubID}/resourceGroups/{ResourceGroup}/providers/Microsoft.DBforMySQL/servers/testsvr2"     --restore-point-in-time "2017-06-15T13:10:00Z"
+      content: az mysql server restore -g testgroup -n testsvrnew     -s "/subscriptions/${SubID}/resourceGroups/${ResourceGroup}/providers/Microsoft.DBforMySQL/servers/testsvr2"     --restore-point-in-time "2017-06-15T13:10:00Z"
   parameters:
   - isRequired: true
     name: --name -n
@@ -181,7 +181,7 @@ items:
     summary: Enable ssl enforcement or not when connect to server.
     description: ''
   - name: --tags
-    summary: Space separated tags in 'key[=value]' format. Use "" to clear existing tags.
+    summary: Space-separated tags in 'key[=value]' format. Use "" to clear existing tags.
     description: ''
   - name: --add
     summary: 'Add an object to a list of objects by specifying a path and key value pairs.  Example: --add property.listProperty <key=value, string or JSON string>.'

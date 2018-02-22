@@ -61,7 +61,7 @@ items:
     summary: VNet gateway SKU.
     description: ''
   - name: --tags
-    summary: Space separated tags in 'key[=value]' format. Use "" to clear existing tags.
+    summary: Space-separated tags in 'key[=value]' format. Use "" to clear existing tags.
     description: ''
   - name: --vpn-type
     defaultValue: RouteBased
@@ -78,7 +78,7 @@ items:
     summary: Weight (0-100) added to routes learned through BGP peering.
     description: ''
   - name: --address-prefixes
-    summary: Space separated list of CIDR prefixes representing the address space for the P2S client.
+    summary: Space-separated list of CIDR prefixes representing the address space for the P2S client.
     description: ''
   - name: --client-protocol
     parameterValueGroup: IkeV2, SSTP
@@ -268,6 +268,7 @@ items:
     summary: Name of resource group. You can configure the default group using `az configure --defaults group=&lt;name&gt;`.
     description: ''
   - name: --gateway-type
+    defaultValue: Vpn
     parameterValueGroup: ExpressRoute, Vpn
     summary: The gateway type.
     description: ''
@@ -278,16 +279,18 @@ items:
     summary: Specify a single public IP (name or ID) for an active-standby gateway. Specify two space-separated public IPs for an active-active gateway.
     description: ''
   - name: --sku
+    defaultValue: Basic
     parameterValueGroup: Basic, HighPerformance, Standard, UltraPerformance, VpnGw1, VpnGw2, VpnGw3
     summary: VNet gateway SKU.
     description: ''
   - name: --tags
-    summary: Space separated tags in 'key[=value]' format. Use "" to clear existing tags.
+    summary: Space-separated tags in 'key[=value]' format. Use "" to clear existing tags.
     description: ''
   - name: --vnet
     summary: Name or ID of a virtual network that contains a subnet named 'GatewaySubnet'.
     description: ''
   - name: --vpn-type
+    defaultValue: RouteBased
     parameterValueGroup: PolicyBased, RouteBased
     summary: VPN routing type.
     description: ''
@@ -305,7 +308,7 @@ items:
     summary: Weight (0-100) added to routes learned through BGP peering.
     description: ''
   - name: --address-prefixes
-    summary: Space separated list of CIDR prefixes representing the address space for the P2S client.
+    summary: Space-separated list of CIDR prefixes representing the address space for the P2S client.
     description: ''
   - name: --client-protocol
     parameterValueGroup: IkeV2, SSTP
@@ -450,6 +453,6 @@ globalParameters:
 doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
 doc_source_url_path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
 original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
-gitcommit: https://github.com/Azure/azure-cli/blob/2ae8950ab0babd5a1f814cf5fddebf40d951d85d/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
-updated_at: 10/27/2017 5:44:13 PM
-ms.date: 10/27/2017
+gitcommit: https://github.com/Azure/azure-cli/blob/44879f3e15d94fd3ed52aa26d9e209867d5c8016/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
+updated_at: 2/5/2018 11:51:42 PM
+ms.date: 2/5/2018

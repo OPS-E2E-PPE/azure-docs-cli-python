@@ -7,11 +7,37 @@ items:
   langs:
   - azurecli
   children:
+  - az_vm_image_accept_terms
   - az_vm_image_list
   - az_vm_image_list_offers
   - az_vm_image_list_publishers
   - az_vm_image_list_skus
   - az_vm_image_show
+- uid: az_vm_image_accept_terms
+  name: az vm image accept-terms
+  summary: ''
+  description: ''
+  langs:
+  - azurecli
+  parameters:
+  - name: --offer -f
+    summary: Image offer.
+    description: ''
+  - name: --plan
+    summary: Image billing plan.
+    description: ''
+  - name: --publisher -p
+    summary: Image publisher.
+    description: ''
+  - name: --urn
+    summary: URN, in format of 'publisher:offer:sku:versin'. If specified, other argument values can be omitted.
+    description: ''
+  source:
+    path: src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/_help.py
+    remote:
+      branch: master
+      path: src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/_help.py
+      repo: https://github.com/Azure/azure-cli.git
 - uid: az_vm_image_list
   name: az vm image list
   summary: List the VM/VMSS images available in the Azure Marketplace.
@@ -119,7 +145,7 @@ items:
     description: ''
   - isRequired: true
     name: --offer -f
-    summary: A valid image publisher offer.
+    summary: Image offer.
     description: ''
   - isRequired: true
     name: --publisher -p
@@ -142,27 +168,25 @@ items:
     syntax:
       content: >-
         latest=$(az vm image list -p OpenLogic -s 7.3 --all --query     "[?offer=='CentOS'].version" -o tsv | sort -u | tail -n 1)
-                                az vm image show -l westus -f CentOS -p OpenLogic --s 7.3 --version ${latest}
+                                az vm image show -l westus -f CentOS -p OpenLogic --s 7.3 --version {latest}
   parameters:
-  - isRequired: true
-    name: --location -l
+  - name: --location -l
     summary: Location. You can configure the default location using `az configure --defaults location=&lt;location&gt;`.
     description: ''
-  - isRequired: true
-    name: --offer -f
-    summary: A valid image publisher offer.
+  - name: --offer -f
+    summary: Image offer.
     description: ''
-  - isRequired: true
-    name: --publisher -p
-    summary: A valid image publisher.
+  - name: --publisher -p
+    summary: Image publisher.
     description: ''
-  - isRequired: true
-    name: --sku -s
-    summary: A valid image SKU.
+  - name: --sku -s
+    summary: Image sku.
     description: ''
-  - isRequired: true
-    name: --version
-    summary: A valid image SKU version.
+  - name: --urn
+    summary: URN, in format of 'publisher:offer:sku:versin'. If specified, other argument values can be omitted.
+    description: ''
+  - name: --version
+    summary: Image sku's version.
     description: ''
   source:
     path: src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/_help.py
@@ -171,6 +195,9 @@ items:
       path: src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/_help.py
       repo: https://github.com/Azure/azure-cli.git
 commands:
+- uid: az_vm_image_accept_terms
+  name: az vm image accept-terms
+  summary: ''
 - uid: az_vm_image_list
   name: az vm image list
   summary: List the VM/VMSS images available in the Azure Marketplace.
@@ -202,6 +229,6 @@ globalParameters:
 doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
 doc_source_url_path: src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/_help.py
 original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/_help.py
-gitcommit: https://github.com/Azure/azure-cli/blob/ff2511e798208f39df6318a80ca048943d1ab5cd/src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/_help.py
-updated_at: 12/15/2017 12:37:05 AM
-ms.date: 12/15/2017
+gitcommit: https://github.com/Azure/azure-cli/blob/b9be8134f95515cf6a1a494d5d4a3d8222581cfb/src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/_help.py
+updated_at: 2/7/2018 9:20:08 PM
+ms.date: 2/7/2018

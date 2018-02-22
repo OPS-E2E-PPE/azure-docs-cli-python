@@ -1033,7 +1033,7 @@ commands:
   summary: List virtual networks.
 - uid: az_network_vnet_list_endpoint_services
   name: az network vnet list-endpoint-services
-  summary: List what values of endpoint services are available for use.
+  summary: List which services support VNET service tunneling for a given region.
 - uid: az_network_vnet_peering
   name: az network vnet peering
   summary: Manage peering connections between Azure Virtual Networks.
@@ -1180,13 +1180,13 @@ commands:
   summary: Update a VPN connection.
 - uid: az_network_watcher
   name: az network watcher
-  summary: (PREVIEW) Manage the Azure Network Watcher.
+  summary: Manage the Azure Network Watcher.
 - uid: az_network_watcher_configure
   name: az network watcher configure
   summary: Configure the Network Watcher service for different regions.
 - uid: az_network_watcher_flow_log
   name: az network watcher flow-log
-  summary: (PREVIEW) Manage network security group flow logging.
+  summary: Manage network security group flow logging.
 - uid: az_network_watcher_flow_log_configure
   name: az network watcher flow-log configure
   summary: Configure flow logging on a network security group.
@@ -1198,7 +1198,7 @@ commands:
   summary: List Network Watchers.
 - uid: az_network_watcher_packet_capture
   name: az network watcher packet-capture
-  summary: (PREVIEW) Manage packet capture sessions on VMs.
+  summary: Manage packet capture sessions on VMs.
 - uid: az_network_watcher_packet_capture_create
   name: az network watcher packet-capture create
   summary: Create and start a packet capture session.
@@ -1234,7 +1234,7 @@ commands:
   summary: Test IP flow to/from a VM given the currently configured network security group rules.
 - uid: az_network_watcher_troubleshooting
   name: az network watcher troubleshooting
-  summary: (PREVIEW) Manage Network Watcher troubleshooting sessions.
+  summary: Manage Network Watcher troubleshooting sessions.
 - uid: az_network_watcher_troubleshooting_show
   name: az network watcher troubleshooting show
   summary: Get the results of the last troubleshooting operation.
@@ -1257,6 +1257,6 @@ globalParameters:
 doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
 doc_source_url_path: src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
 original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
-gitcommit: https://github.com/Azure/azure-cli/blob/2ae8950ab0babd5a1f814cf5fddebf40d951d85d/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
-updated_at: 10/27/2017 5:44:13 PM
-ms.date: 10/27/2017
+gitcommit: https://github.com/Azure/azure-cli/blob/44879f3e15d94fd3ed52aa26d9e209867d5c8016/src/command_modules/azure-cli-network/azure/cli/command_modules/network/_help.py
+updated_at: 2/5/2018 11:51:42 PM
+ms.date: 2/5/2018
