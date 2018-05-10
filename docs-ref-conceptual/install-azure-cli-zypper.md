@@ -3,13 +3,12 @@ title: Install the Azure CLI 2.0 on Linux with zypper
 description: How to install the Azure CLI 2.0 with zypper
 author: sptramer
 ms.author: sttramer
-manager: routlaw
+manager: carmonm
 ms.date: 01/29/2018
-ms.topic: article
+ms.topic: conceptual
 ms.prod: azure
-ms.technology: azure
-ms.devlang: azurecli
-ms.service: multiple
+ms.technology: azure-cli
+ms.devlang: azure-cli
 ---
 
 # Install Azure CLI 2.0 with zypper
@@ -44,7 +43,7 @@ for the Azure CLI. This package has been tested with openSUSE 42.2 and SLES 12 S
 
    ```bash
    sudo zypper refresh
-   sudo zypper install -y azure-cli
+   sudo zypper install --from azure-cli -y azure-cli
    ```
 
 You can then run the Azure CLI with the `az` command. To log in, run the `az login` command.
