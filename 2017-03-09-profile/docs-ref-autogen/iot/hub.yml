@@ -47,7 +47,7 @@ items:
     description: ''
   - name: --sku
     defaultValue: F1
-    parameterValueGroup: F1, S1, S2, S3
+    parameterValueGroup: B1, B2, B3, F1, S1, S2, S3
     summary: Pricing tier for Azure IoT Hub. Default value is F1, which is free. Note that only one free IoT hub instance is allowed in each subscription. Exception will be thrown if free instances exceed one.
     description: ''
   - name: --unit
@@ -163,13 +163,14 @@ items:
     syntax:
       content: az iot hub show-connection-string
   parameters:
+  - isRequired: true
+    name: --name -n
+    summary: IoT Hub name.
+    description: ''
   - name: --key
     defaultValue: primary
     parameterValueGroup: primary, secondary
     summary: The key to use.
-    description: ''
-  - name: --name -n
-    summary: IoT Hub name.
     description: ''
   - name: --policy-name
     defaultValue: iothubowner
@@ -369,4 +370,5 @@ doc_source_url_path: src/command_modules/azure-cli-iot/azure/cli/command_modules
 original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-iot/azure/cli/command_modules/iot/_help.py
 gitcommit: https://github.com/Azure/azure-cli/blob/0c85e56114c43bcef30f0114c597324ab46e69b2/src/command_modules/azure-cli-iot/azure/cli/command_modules/iot/_help.py
 updated_at: 2/6/2018 8:49:04 PM
-ms.date: 2/6/2018
+ms.date: 02/06/2018
+description: (PREVIEW) Manage Azure IoT hubs.

@@ -4,7 +4,7 @@ description: Learn about the latest updates to Azure CLI 2.0
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 04/10/2018
+ms.date: 06/01/2018
 ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
@@ -12,6 +12,140 @@ ms.devlang: azure-cli
 ---
 
 # Azure CLI 2.0 release notes
+
+## June 5, 2018
+
+Version 2.0.34
+
+### Core
+
+* Added support for cross tenant resource referencing
+* Improved telemetry upload reliability
+
+### ACR
+
+* Added support for VSTS as a remote source location
+* Added `acr import` command
+
+### AKS
+
+* Changed `aks get-credentials` to create the kube config file with more secure filesystem permissions
+
+### Batch
+
+* Fixed bug in Pool list table formatting [[Issue #4378](https://github.com/Azure/azure-cli/issues/4378)]
+
+### IOT
+
+* Added support for creating Basic Tier IoT Hubs
+
+### Network
+
+* Improved `network vnet peering`
+
+### Policy Insights
+
+* Initial Release
+
+### ARM
+
+* Added `account management-group` commands.
+
+### SQL
+
+* Added new managed instance commands:
+  * `sql mi create`
+  * `sql mi show`
+  * `sql mi list`
+  * `sql mi update`
+  * `sql mi delete`
+* Added new managed database commands:
+  * `sql midb create`
+  * `sql midb show`
+  * `sql midb list`
+  * `sql midb restore`
+  * `sql midb delete`
+
+### Storage
+
+* Added extra mimetypes for json and javascript to be inferred from file extensions
+
+### VM
+
+* Changed `vm list-skus` to use fixed columns and add warning that `Tier` and `Size` will be removed
+* Added `--accelerated-networking` option to `vm create`
+* Added `--tags` to `identity create`
+
+## May 22, 2018
+
+Version 2.0.33
+
+### Core
+
+* Added support for expanding `@` in file names
+
+### ACS
+
+* Added new Dev-Spaces commands `aks use-dev-spaces` and `aks remove-dev-spaces`
+* Fixed typo in help message
+
+### AppService
+
+* Improved generic update commands
+* Added async support for `webapp deployment source config-zip`
+
+### Container
+
+* Added support for exporting a container group in yaml format
+* Added support for using a yaml file to create / update a container group
+
+### Extension
+
+* Improved removal of extensions
+
+### Interactive
+
+* Changed logging to mute parser for completions
+* Improved handling of bad help caches
+
+### KeyVault
+
+* Fixed keyvault commands to work in cloud shell or VMs with identity
+
+### Network
+
+* Fix issue where `network watcher show-topology` would not work with vnet and/or subnet name [#6326](https://github.com/Azure/azure-cli/issues/6326)
+* Fix issue where some `network watcher` commands would claim Network Watcher is not enabled for regions when it actually is [#6264](https://github.com/Azure/azure-cli/issues/6264)
+
+### SQL
+
+* [BREAKING CHANGE] Changed response objects returned from `db` and `dw` commands:
+    * Renamed `serviceLevelObjective` property to `currentServiceObjectiveName`
+    * Removed `currentServiceObjectiveId` and `requestedServiceObjectiveId` properties 
+    * Changed `maxSizeBytes` property to be an integer value instead of a string
+* [BREAKING CHANGE] Changed the following `db` and `dw` properties to be read-only:
+    * `requestedServiceObjectiveName`.  To update, use the `--service-objective` parameter or set the `sku.name` property
+    * `edition`. To update, use the `--edition` parameter or set the `sku.tier` property
+    * `elasticPoolName`. To update, use the `--elastic-pool` parameter or set the `elasticPoolId` property
+* [BREAKING CHANGE] Changed the following `elastic-pool` properties to be read-only:
+    * `edition`. To update, use the `--edition` parameter
+    * `dtu`. To update, use the `--capacity` parameter
+    *  `databaseDtuMin`. To update, use the `--db-min-capacity` parameter
+    *  `databaseDtuMax`. To update, use the `--db-max-capacity` parameter
+* Added `--family` and `--capacity` parameters to `db`, `dw`, and `elastic-pool` commands.
+* Added table formatters to `db`, `dw`, and `elastic-pool` commands.
+
+### Storage
+
+* Added completer for `--account-name` argument
+* Fixed problem with `storage entity query`
+
+### VM
+
+* [BREAKING CHANGE] Removed `--write-accelerator` from `vm create`. The same support can be accessed through `vm update` or `vm disk attach`
+* Fixed extension image matching in `[vm|vmss] extension`
+* Added `--boot-diagnostics-storage` to `vm create` to capture boot log
+* Added `--license-type` to `[vm|vmss] update`
 
 ## May 7, 2018
 
@@ -1355,7 +1489,7 @@ Version 2.0.12
 * Added container commands
 * Added billing and consumption modules
 
-```
+```text
 azure-cli (2.0.12)
 
 acr (2.0.9)
@@ -1634,7 +1768,7 @@ Version 2.0.6
 * Add 'az -v' as shortcut for 'az --version' ([#2926](https://github.com/Azure/azure-cli/issues/2926))
 * Improve performance of package load and command execution ([#2819](https://github.com/Azure/azure-cli/issues/2819))
 
-```
+```text
 azure-cli (2.0.6)
 
 acr (2.0.4)
@@ -1834,7 +1968,7 @@ Version 2.0.2
 
 We released the ACR, Batch, KeyVault, and SQL components in this release
 
-```
+```text
 azure-cli (2.0.2)
 
 acr (2.0.0)
@@ -1931,7 +2065,7 @@ To verify the version of the CLI, use `az --version`
 The output lists the version of the CLI itself (2.0.0 in this release), the individual command modules,
 and the versions of Python and GCC that you're using
 
-```
+```text
 azure-cli (2.0.0)
 
 acs (2.0.0)

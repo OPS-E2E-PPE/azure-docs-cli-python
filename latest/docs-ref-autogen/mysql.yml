@@ -79,7 +79,7 @@ commands:
   summary: Update a server.
 - uid: az_mysql_server_wait
   name: az mysql server wait
-  summary: ''
+  summary: Wait for server to satisfy certain conditions.
 - uid: az_mysql_server_logs
   name: az mysql server-logs
   summary: Manage server logs.
@@ -102,3 +102,4 @@ globalParameters:
   summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
 - name: --verbose
   summary: Increase logging verbosity. Use --debug for full debug logs.
+description: Manage Azure Database for MySQL servers.

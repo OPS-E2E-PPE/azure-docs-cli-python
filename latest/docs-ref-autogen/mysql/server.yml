@@ -256,7 +256,7 @@ items:
     description: ''
 - uid: az_mysql_server_wait
   name: az mysql server wait
-  summary: ''
+  summary: Wait for server to satisfy certain conditions.
   description: ''
   langs:
   - azurecli
@@ -337,7 +337,7 @@ commands:
   summary: Update a server.
 - uid: az_mysql_server_wait
   name: az mysql server wait
-  summary: ''
+  summary: Wait for server to satisfy certain conditions.
 globalParameters:
 - name: --debug
   summary: Increase logging verbosity to show all debug logs.
@@ -351,3 +351,4 @@ globalParameters:
   summary: JMESPath query string. See <a href="http://jmespath.org/">http://jmespath.org/</a> for more information and examples.
 - name: --verbose
   summary: Increase logging verbosity. Use --debug for full debug logs.
+description: Manage MySQL servers.
