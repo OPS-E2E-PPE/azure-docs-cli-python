@@ -13,7 +13,7 @@
           "TOC.yml"
         ],
         "src": "latest/docs-ref-autogen",
-        "version": "azure-cli-latest",
+        "version": "azure-cli-2017-03-09-profile",
         "dest": "command"
       },
       {
@@ -45,13 +45,13 @@
           "**/includes/**"
         ],
         "src": "docs-ref-conceptual",
-        "version": "azure-cli-latest",
+        "version": "azure-cli-2017-03-09-profile",
         "dest": ""
       }    
     ],
     "versions": {
-      "azure-cli-latest": {
-        "dest": "azure-cli-latest"
+      "azure-cli-2017-03-09-profile": {
+        "dest": "azure-cli-2017-03-09-profile"
       }
     },
     "overwrite": [],
