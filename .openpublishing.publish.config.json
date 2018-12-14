@@ -34,7 +34,6 @@
    "master-sync-work",
    "live-sync-work"
   ],
-  "skip_source_output_uploading": false,
   "git_repository_branch_open_to_public_contributors": "master",
   "skip_source_output_uploading": false,
   "need_preview_pull_request": true,
@@ -43,7 +42,7 @@
     {
       "path_to_root": "_themes",
       "url": "https://github.com/Microsoft/templates.docs.msft",
-      "branch": "master-prerelease",
+      "branch": "master",
       "branch_mapping": {}
     },
     {
