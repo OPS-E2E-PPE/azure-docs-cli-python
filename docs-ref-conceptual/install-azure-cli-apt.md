@@ -13,7 +13,7 @@ ms.devlang: azurecli
 
 # Install Azure CLI with apt
 
-If you are running a distribution that comes with `apt`, such as Ubuntu or Debian, there's a 64-bit package available
+If you are running a distribution this comes with `apt`, such as Ubuntu or Debian, there's a 64-bit package available
 for the Azure CLI. This package has been tested with:
 
 * Ubuntu trusty, xenial, artful, and bionic
