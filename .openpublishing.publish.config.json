@@ -34,7 +34,6 @@
     "master-sync-work",
     "live-sync-work"
   ],
-  "git_repository_url_open_to_public_contributors": "https://github.com/OPS-E2E-PPE/azure-docs-cli-python",
   "git_repository_branch_open_to_public_contributors": "master",
   "skip_source_output_uploading": false,
   "need_preview_pull_request": true,
@@ -60,7 +59,11 @@
     ]
   },
   "need_generate_pdf_url_template": true,
-  "targets": {},
+  "targets": {
+    "pdf": {
+      "template_folder": "_themes.pdf"
+    }
+  },
   "need_generate_intellisense": false,
   "dependent_packages": [
     {
