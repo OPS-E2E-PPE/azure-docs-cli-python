@@ -16,7 +16,7 @@ ms.devlang: azurecli
 The alias extension allows users to define custom commands for the Azure CLI by using existing commands. Aliases help keep your workflow simple by allowing shortcuts. Since aliases are powered by the Jinja2 template engine, they even offer advanced argument processing.
 
 > [!NOTE]
-> The Alias Extension is in public preview. The features and configuration file format may change.
+> The Alias Extension is in public preview. The features and configuration file format may change prtest.
 
 ## Install the alias extension
 
