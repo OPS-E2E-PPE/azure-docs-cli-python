@@ -17,7 +17,7 @@ Welcome to the Azure CLI!  This article introduces the CLI and helps you complet
 >
 > In scripts and on the Microsoft documentation site, Azure CLI examples are written for the `bash` shell. One-line examples will
 > run on any platform. Longer examples which include line continuations (`\`) or variable assignment need to be modified to work
-> on other shells, including PowerShell.
+> on other shells, including PowerShell. Source testing
 
 ## Install or run in Azure Cloud Shell
 
