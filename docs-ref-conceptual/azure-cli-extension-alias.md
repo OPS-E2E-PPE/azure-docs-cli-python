@@ -28,7 +28,7 @@ Install the extension with the [az extension add](/cli/azure/extension#az-extens
 az extension add --name alias
 ```
 
-Verify the installation of the extension with [az extension list](/cli/azure/extension#az-extension-list). If the alias extension was installed properly, it's listed in the command output.
+Verify the installation of the extension with [az extension list](/cli/azure/extension#az-extension-list). If the alias extension was installed properly, it's listed in the command output. real time testing
 
 ```azurecli-interactive
 az extension list --output table --query '[].{Name:name}'
