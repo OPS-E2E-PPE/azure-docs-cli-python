@@ -100,6 +100,6 @@
     }
   ],
   "docs_build_engine": {
-    "name": "docfx_v2"
+    "name": "docfx_v3"
   }
 }
