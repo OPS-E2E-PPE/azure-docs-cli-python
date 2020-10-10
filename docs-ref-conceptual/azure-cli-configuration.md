@@ -17,7 +17,6 @@ The CLI offers a convenience command for managing some defaults, `az configure`.
 configuration file or with environment variables.
 
 Configuration values used by the CLI are evaluated in the following precedence, with items higher on the list taking priority.
-
 1. Command-line parameters
 2. Environment variables
 3. Values in the configuration file or set with `az configure`
